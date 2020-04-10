@@ -54,10 +54,11 @@ export class AppComponent implements OnInit {
   }
 
   gotToTop(){
+    var newPos = window.pageYOffset/20;
     let scrollToTop = window.setInterval(() => {
-      let pos = window.pageYOffset;
+      var pos = window.pageYOffset;
       if (pos > 0) {
-          window.scrollTo(0, pos - 20); // how far to scroll on each step
+          window.scrollTo(0, pos - newPos); // how far to scroll on each step
       } else {
           window.clearInterval(scrollToTop);
       }
