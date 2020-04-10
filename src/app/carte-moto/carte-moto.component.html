@@ -1,0 +1,13 @@
+<div class="carte">
+  <img class="imageMoto" [src]="moto.lien"/>
+  <img class="logoMarque" [src]="moto.model.marque.logo"/>
+  <div class="d-flex justify-content-between">
+    <div class="nomMoto">{{moto.nom}}</div>
+    <div class="modelMoto">{{moto.cylindres}}</div>
+  </div>
+  <div class="descriptionMoto">
+    <p>
+      {{moto.descResumer}}
+    </p>
+  </div>
+</div>

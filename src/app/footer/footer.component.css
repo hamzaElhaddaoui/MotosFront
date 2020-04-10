@@ -1,0 +1,33 @@
+.footer{
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 170px;
+    color: white;
+}
+
+.profileImage{
+    width:120px;
+    height:120px;
+    
+}
+
+.carteProfile{
+    margin-top: 40px;
+}
+.titrePerso{
+    margin-top: 5px;
+}
+
+.desc{
+    margin-top: 40px;
+    border-right: white solid 1px;
+}
+/* .social{
+    margin-top: 10px;
+} */
+
+.social > a{
+    color: white;
+}
+.item{
+    margin-left: 10px;
+}

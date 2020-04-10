@@ -1,0 +1,40 @@
+.marqueMoto{
+    color: blanchedalmond;
+}
+
+.marqueMenu{
+    height: 90px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.carte{
+    height: 200px;
+    width: 100%;
+    margin-bottom: 50px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.marqueClicked{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nomMarque{
+    margin-top: 10px;
+}
+
+.fa{
+    margin-right: 10px;
+}
+
+.fermerFenetre{
+    color: grey;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    z-index: 1;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation-bar.component.css']
 })
 export class NavigationBarComponent implements OnInit {
-
+  private mot:string="";
+  @Output() private itemToSearch:EventEmitter<string>=new EventEmitter<string>();
   constructor() { }
 
   ngOnInit() {
+  }
+  chercheurTape(event:any){
+    if(this.mot!=event.target.value){
+      
+      setTimeout( () => { this.mot=event.target.value; this.itemToSearch.emit(this.mot);} , 500)
+    }
   }
 
 }

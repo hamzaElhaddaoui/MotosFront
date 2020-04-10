@@ -1,3 +1,25 @@
-<p>
-  marque-moto works!
-</p>
+<div class="container">
+  <div class="marqueMoto d-flex justify-content-center row">
+    <div *ngFor="let marque of marques" class="p-4">
+      <img class="marqueMenu" (click)="marqueClique(marque)" [src]="marque.logo" />
+    </div>
+  </div>
+  <div class="row" *ngIf="isMarqueClicked">
+    <div class="col-md-12">
+      <i class="fa fa-window-close fermerFenetre" (click)="fermerMarque()"></i>
+      <div class="carte">
+        <div class="row">
+          <div class="col-md-3"><img class="marqueClicked" [src]="currentMarque.logo" /></div>
+          <div class="col-md-9">
+            <div class="nomMarque">
+              <h3>{{currentMarque.nom}}</h3>
+            </div>
+            <div class="subtilite"><i class="fa fa-map-marker"></i>{{currentMarque.pays}} | <i
+                class="fa fa-child"></i>{{currentMarque.annee}}</div>
+            <div> Résumer de la marque en cours ...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

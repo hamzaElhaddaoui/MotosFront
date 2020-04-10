@@ -1,15 +1,50 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, OnChanges } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-marque-moto',
   templateUrl: './marque-moto.component.html',
   styleUrls: ['./marque-moto.component.css']
 })
-export class MarqueMotoComponent implements OnInit {
+export class MarqueMotoComponent implements OnInit,OnChanges {
 
-  constructor() { }
+  @Output() marquesSelectioner:EventEmitter<number>= new EventEmitter<number>();
+  @Output() marquesFermer:EventEmitter<any> = new EventEmitter();
 
-  ngOnInit() {
+  @Input() isMarqueClicked:boolean;
+  private marques:any;
+  private currentMarque:any;
+  constructor(private http:HttpClient) { }
+
+  ngOnChanges(){
+    console.log(this.isMarqueClicked);
   }
 
+  ngOnInit() {
+    //configurer le header de la requete
+    // const httpOptions = {
+    //   headers: new HttpHeaders({
+    //     'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJIYW16YSIsImV4cCI6MTU4NjQxMTkwNSwiaWF0IjoxNTg2Mzc1OTA1fQ.w5DatAOnj8KPvD5kcJlf2w_3GS-t6pn9-uv_AudYdls'
+    //   })
+    // };
+
+    let headers: HttpHeaders = new HttpHeaders();
+    headers = headers.append('Authorization', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJIYW16YSIsImV4cCI6MTU4NjQxMTkwNSwiaWF0IjoxNTg2Mzc1OTA1fQ.w5DatAOnj8KPvD5kcJlf2w_3GS-t6pn9-uv_AudYdls');
+    // headers = headers.append('zumo-api-version', '2.0.0');
+    //get marques from api
+    console.log("fetching for data");
+    this.http.get("http://localhost:8080/marques")
+    .subscribe((data)=>{this.marques=data;
+                        console.log(this.marques)},
+    err => {console.log(err)})
+  }
+
+  marqueClique(marque:any){
+    this.marquesSelectioner.emit(marque.id);
+    this.currentMarque=marque;
+  }
+  fermerMarque(){
+    this.marquesFermer.emit();
+    
+  }
 }

@@ -1,0 +1,27 @@
+.background{
+    z-index: -1;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding:0;
+    margin:0;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}
+.actualiser{
+    color: honeydew;
+    position: absolute;
+    right: 10%;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.goTop{
+    color: honeydew;
+    position: absolute;
+    right: 10%;
+    cursor: pointer;
+    bottom: 225px;
+    font-size: 30px;
+}

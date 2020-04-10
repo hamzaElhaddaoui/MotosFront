@@ -1,3 +1,14 @@
-<app-navigation-bar></app-navigation-bar>
-
+<app-navigation-bar (itemToSearch)="lancerUneRecherche($event)"></app-navigation-bar>
+<app-marque-moto (marquesSelectioner)="marqueClique($event)" (marquesFermer)="marqueFermer()" [isMarqueClicked]="isEnableMarque"></app-marque-moto>
+<i (click)="actualiserContenue()" *ngIf="actualiser" class="fa fa-refresh actualiser"></i>
+<div class="container">
+    <div class="row">
+        <div *ngFor="let moto of randomMotos" class="col-md-4">
+            <app-carte-moto [moto]="moto"></app-carte-moto>
+        </div>
+    </div>
+</div>
+<i (click)="gotToTop()" class="fa fa-long-arrow-up goTop"></i>
+<app-footer></app-footer>
+<div class="background"></div>
 <router-outlet></router-outlet>
