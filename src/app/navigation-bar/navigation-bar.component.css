@@ -1,5 +1,19 @@
 .navbar{
     height: 85px;
+    font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.inputCostum{
+    border-radius: 0%;
+    
+}
+
+.inputCostum:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.inputCostum:focus{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -10,4 +24,8 @@
 
 .form-inline{
     width: 35%;
+}
+
+.logo{
+    height: 80px;
 }

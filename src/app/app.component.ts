@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'motosFront';
+  title = 'Moto info';
   private isEnableMarque: boolean = false;
   private acctualIdMarque: number;
   private link: string = "http://localhost:8080/motos/"
