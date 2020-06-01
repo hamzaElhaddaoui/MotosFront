@@ -8,11 +8,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent implements OnInit {
   title = 'Moto info';
-  private isEnableMarque: boolean = false;
+  public isEnableMarque: boolean = false;
   private acctualIdMarque: number;
-  private link: string = "http://localhost:8080/motos/"
-  private randomMotos: any;
-  private actualiser: boolean = true;
+  private link: string = "http://apimotos.westeurope.azurecontainer.io/motos/";
+  public randomMotos: any;
+  public actualiser: boolean = true;
   constructor(private http: HttpClient) { }
 
   ngOnInit() {

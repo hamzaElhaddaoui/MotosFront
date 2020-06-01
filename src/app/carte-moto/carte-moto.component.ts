@@ -7,7 +7,7 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 })
 export class CarteMotoComponent implements OnInit,OnChanges {
   @Input()
-  private moto:any;
+  public moto:any;
   constructor() { }
 
   ngOnInit() {

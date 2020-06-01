@@ -12,8 +12,8 @@ export class MarqueMotoComponent implements OnInit,OnChanges {
   @Output() marquesFermer:EventEmitter<any> = new EventEmitter();
 
   @Input() isMarqueClicked:boolean;
-  private marques:any;
-  private currentMarque:any;
+  public marques:any;
+  public currentMarque:any;
   constructor(private http:HttpClient) { }
 
   ngOnChanges(){
@@ -33,7 +33,7 @@ export class MarqueMotoComponent implements OnInit,OnChanges {
     // headers = headers.append('zumo-api-version', '2.0.0');
     //get marques from api
     console.log("fetching for data");
-    this.http.get("http://localhost:8080/marques")
+    this.http.get("http://apimotos.westeurope.azurecontainer.io/marques")
     .subscribe((data)=>{this.marques=data;
                         console.log(this.marques)},
     err => {console.log(err)})
