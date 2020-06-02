@@ -2,14 +2,32 @@
     color: blanchedalmond;
 }
 
-.marqueMenu{
-    height: 90px;
+.marqueMotoSmall{
+    display: none;
+    margin-top: 20px;
+    margin-bottom: 40px;
     width: 100%;
+    left: auto;
+    right: auto;
+}
+
+
+@media (max-width: 991px) {
+    .marqueMotoLarge     { display: none; }
+    .marqueMotoSmall { display: block; }
+}
+
+.dropCustom{
+    width: 100%;
+}
+
+.marqueMenu{
+    height: 75px;
     cursor: pointer;
 }
 
 .carte{
-    height: 200px;
+    height: 80%;
     width: 100%;
     margin-bottom: 50px;
     background-color: #f8f9fa;
@@ -18,8 +36,8 @@
 
 .marqueClicked{
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    width: 80%;
 }
 
 .nomMarque{

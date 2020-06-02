@@ -2,14 +2,14 @@
     background-color: rgba(0, 0, 0, 0.6);
     font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
     font-size: 14px;
-    height: 170px;
     color: white;
 }
 
 .profileImage{
-    width:120px;
     height:120px;
-    
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .carteProfile{
@@ -21,7 +21,7 @@
 
 .desc{
     margin-top: 40px;
-    border-right: white solid 1px;
+    margin-bottom: 10px;
 }
 /* .social{
     margin-top: 10px;
@@ -32,4 +32,9 @@
 }
 .item{
     margin-left: 10px;
+}
+
+.barre{
+    border-left:white solid 1px;
+    margin-bottom: 20px;
 }

@@ -1,16 +1,28 @@
 <div class="container">
-  <div class="marqueMoto d-flex justify-content-center row">
+  <div class="marqueMotoLarge">
+  <div class="d-flex justify-content-center row ">
     <div *ngFor="let marque of marques" class="p-4">
       <img class="marqueMenu" (click)="marqueClique(marque)" [src]="marque.logo" />
     </div>
   </div>
+</div>
+  
+  <div class="dropdown marqueMotoSmall">
+    <button class="btn btn-secondary dropdown-toggle dropCustom" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Choisir une marque
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width:100%;">
+      <a *ngFor="let marque of marques" class="dropdown-item" (click)="marqueClique(marque)" >{{marque.nom}}</a>
+    </div>
+  </div>
+
   <div class="row" *ngIf="isMarqueClicked">
     <div class="col-md-12">
       <i class="fa fa-window-close fermerFenetre" (click)="fermerMarque()"></i>
       <div class="carte">
         <div class="row">
-          <div class="col-md-3"><img class="marqueClicked" [src]="currentMarque.logo" /></div>
-          <div class="col-md-9">
+          <div class="col-sm-4 col-md-4"><img class="marqueClicked" [src]="currentMarque.logo" /></div>
+          <div class="col-sm-8 col-md-8">
             <div class="nomMarque">
               <h3>{{currentMarque.nom}}</h3>
             </div>
