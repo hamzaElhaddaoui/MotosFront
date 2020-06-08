@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
   title = 'Moto info';
   public isEnableMarque: boolean = false;
   private acctualIdMarque: number;
+  // private link: string ="http://localhost/motos/";
   private link: string = "http://apimotos.westeurope.azurecontainer.io/motos/";
   public randomMotos: any;
   public actualiser: boolean = true;
