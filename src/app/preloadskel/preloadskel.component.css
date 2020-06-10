@@ -1,0 +1,57 @@
+.skel{
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.carte{
+    cursor: pointer;
+    height: 430px;
+    width: 100%;
+    margin-bottom: 50px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 0px;
+    padding-top: 15px;
+}
+
+.image {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    height: 250px;
+    animation: pulse 1s infinite ease-in-out;
+    -webkit-animation: pulse 1s infinite ease-in-out;
+}
+
+.titre{
+    margin-left: 12px;
+    margin-top: 10px;
+    height: 20px;
+    width: 40%;
+    animation: pulse 1s infinite ease-in-out;
+    -webkit-animation: pulse 1s infinite ease-in-out;
+}
+
+.descriptionLine{
+    margin-top: 15px;
+    height: 20px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    animation: pulse 1s infinite ease-in-out;
+    -webkit-animation: pulse 1s infinite ease-in-out;
+}
+
+@keyframes pulse{
+    0%{
+        background-color: rgba(165, 165, 165, .1);
+    }
+    50%{
+        background-color: rgba(165, 165, 165, .5);
+    }
+
+    100%{
+        background-color: rgba(165, 165, 165, .1);
+    }
+}
+

@@ -9,6 +9,10 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { MarqueMotoComponent } from './marque-moto/marque-moto.component';
 import { CarteMotoComponent } from './carte-moto/carte-moto.component';
 import { FooterComponent } from './footer/footer.component';
+import { PreloadskelComponent } from './preloadskel/preloadskel.component';
+import { MotosComponentComponent } from './motos-component/motos-component.component';
+import { MotoInfoComponent } from './moto-info/moto-info.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { FooterComponent } from './footer/footer.component';
     NavigationBarComponent,
     MarqueMotoComponent,
     CarteMotoComponent,
-    FooterComponent
+    FooterComponent,
+    PreloadskelComponent,
+    MotosComponentComponent,
+    MotoInfoComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

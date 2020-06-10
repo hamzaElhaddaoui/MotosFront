@@ -1,0 +1,14 @@
+<app-navigation-bar (itemToSearch)="lancerUneRecherche($event)"></app-navigation-bar>
+<app-marque-moto (marquesSelectioner)="marqueClique($event)" (marquesFermer)="marqueFermer()" [isMarqueClicked]="isEnableMarque"></app-marque-moto>
+<div *ngIf="isLoadedInformation">
+<i (click)="actualiserContenue()" *ngIf="actualiser" class="fa fa-refresh actualiser"></i>
+<div class="container">
+  <div class="row">
+      <div *ngFor="let moto of randomMotos" class="col-lg-4 col-md-6 col-sm-6">
+          <app-carte-moto [moto]="moto"></app-carte-moto>
+      </div>
+  </div>
+</div>
+<i (click)="gotToTop()" class="fa fa-long-arrow-up goTop"></i>
+</div>
+<app-preloadskel *ngIf="!isLoadedInformation" ></app-preloadskel>

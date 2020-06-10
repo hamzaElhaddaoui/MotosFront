@@ -14,6 +14,7 @@ export class CarteMotoComponent implements OnInit,OnChanges {
   }
 
   ngOnChanges(){
+    this.moto.link="/moto/"+this.moto.id;
     this.moto.descResumer=this.moto.description.substring(0,190)+"...";
   }
 
