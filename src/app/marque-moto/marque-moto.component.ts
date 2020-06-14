@@ -15,8 +15,8 @@ export class MarqueMotoComponent implements OnInit,OnChanges {
   public marques:any;
   public currentMarque:any;
   private link:string = 
-  // "http://apimotos.westeurope.azurecontainer.io/marques";
-  "http://localhost/marques";
+  "http://apimotos.westeurope.azurecontainer.io/marques";
+  //"http://localhost/marques";
   constructor(private http:HttpClient) { }
 
   ngOnChanges(){

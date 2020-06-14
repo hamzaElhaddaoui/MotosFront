@@ -1,0 +1,17 @@
+.actualiser{
+    color: honeydew;
+    position: relative;
+    left: 7%;
+    cursor: pointer;
+    bottom: 15px;
+    font-size: 30px;
+}
+
+.goTop{
+    color: honeydew;
+    position: relative;
+    left: 93%;
+    cursor: pointer;
+    bottom: 20px;
+    font-size: 40px;
+}

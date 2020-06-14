@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import {MatDividerModule} from '@angular/material/divider'; 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,8 @@ import { PreloadskelComponent } from './preloadskel/preloadskel.component';
 import { MotosComponentComponent } from './motos-component/motos-component.component';
 import { MotoInfoComponent } from './moto-info/moto-info.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { PreloadMotoInfoComponent } from './preload-moto-info/preload-moto-info.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,13 +27,16 @@ import { NotFoundComponent } from './not-found/not-found.component';
     PreloadskelComponent,
     MotosComponentComponent,
     MotoInfoComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    PreloadMotoInfoComponent
   ],
   imports: [
+    MatDividerModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
 

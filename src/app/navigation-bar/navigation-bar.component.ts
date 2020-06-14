@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -7,6 +7,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class NavigationBarComponent implements OnInit {
   private mot:string="";
+  @Input() public search:boolean;
   @Output() private itemToSearch:EventEmitter<string>=new EventEmitter<string>();
   constructor() { }
 

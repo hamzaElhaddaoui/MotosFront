@@ -1,79 +1,88 @@
-<app-navigation-bar (itemToSearch)="lancerUneRecherche($event)"></app-navigation-bar>
+<app-navigation-bar (itemToSearch)="lancerUneRecherche($event)" [search]="false" ></app-navigation-bar>
 <div class="container">
   <div class="marge"></div>
-  <div class="carte">
-    <div class="row flex">
-      <div class="col-12 col-sm-12 col-md-5 flex">
-        <img class="image" [src]="moto.lien">
-      </div>
-      <div class="col-12 col-sm-12 col-md-7">
-        <div class="titre">
-          <span class="marque">{{moto.model.marque.nom}}</span><span class="nomMoto"> {{moto.nom}} </span><span
-            class="productionMoto">{{moto.debutfabrication}} - {{moto.finfabrication}}</span>
+  <div class="back" routerLink="/home">
+    <i class="fa fa-chevron-circle-left "></i>
+    Page précedent
+  </div>
+  <ng-container *ngIf="!dataLoaded">
+    <app-preload-moto-info></app-preload-moto-info>
+  </ng-container>
+  <ng-container *ngIf="dataLoaded">
+    <div class="carte">
+      <div class="row flex">
+        <div class="col-12 col-sm-12 col-md-5 flex">
+          <img class="image" [src]="moto.lien">
         </div>
-        <div class="ligne"></div>
-        <div class="categorie">Categorie - {{moto.categorie}}</div>
-        <div class="description">{{moto.description}}</div>
-      </div>
-    </div>
-  </div>
-  <div class="carte cadre col-12">
-    <div class="row">
-      <div class="col-md-12">
-        <span class="titreCat">Fiche téchnique</span>
-        <div class="ligne2"></div>
-      </div>
-      <div class="col-4 col-sm-4 col-md-4 car">Model</div>
-      <div class="col-8 col-sm-8 col-md-8 info">{{moto.model.nom}}</div>
-      <div class="col-md-12">
-        <div class="lignePro"></div>
-      </div>
-      <div class="col-4 col-sm-4 col-md-4 car">Moteur</div>
-      <div class="col-8 col-sm-8 col-md-8 info">{{moto.typemoteur}}</div>
-      <div class="col-md-12">
-        <div class="lignePro"></div>
-      </div>
-      <div class="col-4 col-sm-4 col-md-4 car">Cylindres</div>
-      <div class="col-8 col-sm-8 col-md-8 info">{{moto.cylindres}}</div>
-      <div class="col-md-12">
-        <div class="lignePro"></div>
-      </div>
-      <div class="col-4 col-sm-4 col-md-4 car">Puissance</div>
-      <div class="col-8 col-sm-8 col-md-8 info">{{moto.puissance}}</div>
-      <div class="col-md-12">
-        <div class="lignePro"></div>
-      </div>
-      <div class="col-4 col-sm-4 col-md-4 car">Torque</div>
-      <div class="col-8 col-sm-8 col-md-8 info">{{moto.couple}}</div>
-      <div class="col-md-12">
-        <div class="lignePro"></div>
-      </div>
-      <div class="col-4 col-sm-4 col-md-4 car">Rapports</div>
-      <div class="col-8 col-sm-8 col-md-8 info">{{moto.rapports}}</div>
-      <div class="col-md-12">
-        <div class="lignePro"></div>
-      </div>
-      <div class="col-4 col-sm-4 col-md-4 car">Poids</div>
-      <div class="col-8 col-sm-8 col-md-8 info">{{moto.poids}}</div>
-      <div class="col-md-12">
-        <div class="lignePro"></div>
-      </div>
-    </div>
-  </div>
-  <div *ngIf="modelSimilaire!=null" class="carte cadre col-12">
-    <div class="row">
-      <div class="col-md-12">
-        <span class="titreCat">Model Similaire</span>
-        <div class="ligne2"></div>
-      </div>
-      <div *ngFor="let motoS of modelSimilaire" class="col-md-4 motoSim" [routerLink]="motoS.link">
-        {{motoS.link}}
-        <div class="imageS"><img [src]="motoS.lien"></div>
-        <div class="contS">
-          <span class="titleS">{{motoS.nom}}</span>
-          <span class="production">{{motoS.debutfabrication}} - {{motoS.finfabrication}}</span>
+        <div class="col-12 col-sm-12 col-md-7">
+          <div class="titre">
+            <span class="marque">{{moto.model.marque.nom}}</span><span class="nomMoto"> {{moto.nom}} </span><span
+              class="productionMoto">{{moto.debutfabrication}} - {{moto.finfabrication}}</span>
+          </div>
+          <div class="ligne"></div>
+          <div class="categorie">Categorie - {{moto.categorie}}</div>
+          <div class="description">{{moto.description}}</div>
         </div>
       </div>
     </div>
-  </div>
+    <div class="carte cadre col-12">
+      <div class="row">
+        <div class="col-md-12">
+          <span class="titreCat">Fiche téchnique</span>
+          <div class="ligne2"></div>
+        </div>
+        <div class="col-4 col-sm-4 col-md-4 car">Model</div>
+        <div class="col-8 col-sm-8 col-md-8 info">{{moto.model.nom}}</div>
+        <div class="col-md-12">
+          <div class="lignePro"></div>
+        </div>
+        <div class="col-4 col-sm-4 col-md-4 car">Moteur</div>
+        <div class="col-8 col-sm-8 col-md-8 info">{{moto.typemoteur}}</div>
+        <div class="col-md-12">
+          <div class="lignePro"></div>
+        </div>
+        <div class="col-4 col-sm-4 col-md-4 car">Cylindres</div>
+        <div class="col-8 col-sm-8 col-md-8 info">{{moto.cylindres}}</div>
+        <div class="col-md-12">
+          <div class="lignePro"></div>
+        </div>
+        <div class="col-4 col-sm-4 col-md-4 car">Puissance</div>
+        <div class="col-8 col-sm-8 col-md-8 info">{{moto.puissance}}</div>
+        <div class="col-md-12">
+          <div class="lignePro"></div>
+        </div>
+        <div class="col-4 col-sm-4 col-md-4 car">Torque</div>
+        <div class="col-8 col-sm-8 col-md-8 info">{{moto.couple}}</div>
+        <div class="col-md-12">
+          <div class="lignePro"></div>
+        </div>
+        <div class="col-4 col-sm-4 col-md-4 car">Rapports</div>
+        <div class="col-8 col-sm-8 col-md-8 info">{{moto.rapports}}</div>
+        <div class="col-md-12">
+          <div class="lignePro"></div>
+        </div>
+        <div class="col-4 col-sm-4 col-md-4 car">Poids</div>
+        <div class="col-8 col-sm-8 col-md-8 info">{{moto.poids}}</div>
+        <div class="col-md-12">
+          <div class="lignePro"></div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="modelSimilaire!=null" class="carte cadre col-12">
+      <div class="row">
+        <div class="col-md-12">
+          <span class="titreCat">Motos de model similaire</span>
+          <div class="ligne2"></div>
+        </div>
+        <div *ngFor="let motoS of modelSimilaire" class="col-md-4 motoSim" [ngClass]="{verLine: motoS.notLast}"
+          [routerLink]="motoS.link">
+          <div class="imageS"><img [src]="motoS.lien"></div>
+          <div class="contS" [ngClass]="{contSS: motoS.notLast}">
+            <span class="titleS">{{motoS.nom}}</span>
+            <span class="production">{{motoS.debutfabrication}} - {{motoS.finfabrication}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
 </div>

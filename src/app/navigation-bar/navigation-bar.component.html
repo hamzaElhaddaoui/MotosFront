@@ -5,7 +5,7 @@
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button> -->
-    <div class="col-md-5">
+    <div class="col-md-5" *ngIf="search">
       <input (keyup)="chercheurTape($event)" class="form-control mr-sm-2 inputCostum" type="text" placeholder="Chercher"
         aria-label="Chercher">
     </div>

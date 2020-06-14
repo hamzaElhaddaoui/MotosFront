@@ -10,8 +10,8 @@ export class MotosComponentComponent implements OnInit {
 
   public isEnableMarque: boolean = false;
   private acctualIdMarque: number;
-  private link: string ="http://localhost/motos/";
-  // private link: string = "http://apimotos.westeurope.azurecontainer.io/motos/";
+  //private link: string ="http://localhost/motos/";
+  private link: string = "http://apimotos.westeurope.azurecontainer.io/motos/";
   public randomMotos: any;
   public actualiser: boolean = true;
   public isLoadedInformation: boolean = false;

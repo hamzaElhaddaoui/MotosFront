@@ -1,4 +1,4 @@
-<app-navigation-bar (itemToSearch)="lancerUneRecherche($event)"></app-navigation-bar>
+<app-navigation-bar (itemToSearch)="lancerUneRecherche($event)" [search]="true" ></app-navigation-bar>
 <app-marque-moto (marquesSelectioner)="marqueClique($event)" (marquesFermer)="marqueFermer()" [isMarqueClicked]="isEnableMarque"></app-marque-moto>
 <div *ngIf="isLoadedInformation">
 <i (click)="actualiserContenue()" *ngIf="actualiser" class="fa fa-refresh actualiser"></i>
