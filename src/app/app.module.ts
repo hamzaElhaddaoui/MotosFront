@@ -16,6 +16,8 @@ import { MotoInfoComponent } from './moto-info/moto-info.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PreloadMotoInfoComponent } from './preload-moto-info/preload-moto-info.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddMotoComponent } from './add-moto/add-moto.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MotosComponentComponent,
     MotoInfoComponent,
     NotFoundComponent,
-    PreloadMotoInfoComponent
+    PreloadMotoInfoComponent,
+    AddMotoComponent
   ],
   imports: [
     MatDividerModule,
@@ -36,7 +39,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [
 

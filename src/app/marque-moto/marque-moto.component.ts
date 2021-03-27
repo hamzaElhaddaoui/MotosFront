@@ -14,8 +14,8 @@ export class MarqueMotoComponent implements OnInit,OnChanges {
   @Input() isMarqueClicked:boolean;
   public marques:any;
   public currentMarque:any;
-  private link:string = 
-  "http://apimotos.westeurope.azurecontainer.io/marques";
+  private link:string = "http://localhost:8080/marques";
+  //"http://apimotos.westeurope.azurecontainer.io/marques";
   //"http://localhost/marques";
   constructor(private http:HttpClient) { }
 

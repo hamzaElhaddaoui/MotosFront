@@ -1,0 +1,172 @@
+<app-navigation-bar (itemToSearch)="lancerUneRecherche($event)" [search]="false" ></app-navigation-bar>
+<!-- main app container -->
+
+<div class="container mt-4">
+  <div class="jumbotron">
+      <div class="row">
+        <div class="offset-md-1 mb-3">
+          <h2>Ajoutez une moto</h2>
+        </div>
+      </div>
+      <form [formGroup]="formgroup" (ngSubmit)="onSubmit()">
+      <div class="row">
+          <div class="col-md-4 offset-md-1">
+            <div class="form-group">
+              <label for="marque">Marque *</label>
+              <select class="form-control" id="marque" formControlName="marque" [ngClass]="{ 'is-invalid': submitted && f.marque.errors }">
+                <option *ngFor="let mar of marques" [ngValue]="mar.id" >{{mar.nom}}</option>
+              </select>
+              <div *ngIf="submitted && f.marque.errors" class="invalid-feedback">
+                <div *ngIf="f.marque.errors.required">Field is required</div>
+            </div>
+            </div>
+          </div>
+          <div class="col-md-4 offset-md-1">
+            <div class="form-group">
+              <label for="mod">Model *</label>
+              <select class="form-control" id="mod" formControlName="model" [ngClass]="{ 'is-invalid': submitted && f.model.errors }">
+                <option *ngFor="let mod of models" [ngValue]="mod.id" >{{mod.nom}}</option>
+              </select>
+              <div *ngIf="submitted && f.model.errors" class="invalid-feedback">
+                <div *ngIf="f.model.errors.required">Field is required</div>
+            </div>
+            </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 offset-md-1">
+          <div class="form-group">
+            <label>Nom *</label>
+            <input type="text" formControlName="nom" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nom.errors }" />
+            <div *ngIf="submitted && f.nom.errors" class="invalid-feedback">
+                <div *ngIf="f.nom.errors.required">Field is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 offset-md-1">
+          <div class="form-group">
+            <label for="categorie">Categorie *</label>
+            <select class="form-control" id="categorie" formControlName="categorie" [ngClass]="{ 'is-invalid': submitted && f.categorie.errors }">
+              <option *ngFor="let cat of categories" [ngValue]="cat.nom" >{{cat.nom}}</option>
+            </select>
+            <div *ngIf="submitted && f.categorie.errors" class="invalid-feedback">
+              <div *ngIf="f.categorie.errors.required">Field is required</div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 offset-md-1">
+          <div class="form-group">
+            <label>Lien de l'image *</label>
+            <input type="text" formControlName="imageLink" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.imageLink.errors }" />
+            <div *ngIf="submitted && f.imageLink.errors" class="invalid-feedback">
+                <div *ngIf="f.imageLink.errors.required">Field is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 offset-md-1">
+          <div class="form-group">
+            <label>Puissance *</label>
+            <input type="text" formControlName="puissance" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.puissance.errors }" />
+            <div *ngIf="submitted && f.puissance.errors" class="invalid-feedback">
+                <div *ngIf="f.puissance.errors.required">Field is required</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 offset-md-1">
+          <div class="form-group">
+            <label>Type moteur *</label>
+            <input type="text" formControlName="motorType" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.motorType.errors }" />
+            <div *ngIf="submitted && f.motorType.errors" class="invalid-feedback">
+                <div *ngIf="f.motorType.errors.required">Field is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 offset-md-1">
+          <div class="form-group">
+            <label>Couple *</label>
+            <input type="text" formControlName="couple" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.couple.errors }" />
+            <div *ngIf="submitted && f.couple.errors" class="invalid-feedback">
+                <div *ngIf="f.couple.errors.required">Field is required</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 offset-md-1">
+          <div class="form-group">
+            <label>Rapports *</label>
+            <input type="text" formControlName="rapport" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.rapport.errors }" />
+            <div *ngIf="submitted && f.rapport.errors" class="invalid-feedback">
+                <div *ngIf="f.rapport.errors.required">Field is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 offset-md-1">
+          <div class="form-group">
+            <label>Cylindres *</label>
+            <input type="text" formControlName="cylindre" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cylindre.errors }" />
+            <div *ngIf="submitted && f.cylindre.errors" class="invalid-feedback">
+                <div *ngIf="f.cylindre.errors.required">Field is required</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 offset-md-1">
+          <div class="form-group">
+            <label>Année debut de production *</label>
+            <input type="text" type="number" placeholder="2018" formControlName="datedebutprod" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.datedebutprod.errors }" />
+            <div *ngIf="submitted && f.datedebutprod.errors" class="invalid-feedback">
+                <div *ngIf="f.datedebutprod.errors.required">Field is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 offset-md-1">
+          <div class="form-group">
+            <label>Année fin de production</label>
+            <input type="text" type="number" placeholder="2020" formControlName="datefinprod" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.datefinprod.errors }" />
+            <div *ngIf="submitted && f.datefinprod.errors" class="invalid-feedback">
+                <div *ngIf="f.datefinprod.errors.required">Field is required</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 offset-md-1">
+          <div class="form-group">
+            <label>Poids *</label>
+            <input type="text" formControlName="poid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.poid.errors }" />
+            <div *ngIf="submitted && f.poid.errors" class="invalid-feedback">
+                <div *ngIf="f.poid.errors.required">Field is required</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-9 offset-md-1">
+          <div class="form-group">
+            <label>Description</label>
+            <textarea class="form-control" formControlName="description" rows="3"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 offset-md-5">
+          <div class="form-group">
+            <button [disabled]="loading" class="btn btn-primary">Ajouter</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

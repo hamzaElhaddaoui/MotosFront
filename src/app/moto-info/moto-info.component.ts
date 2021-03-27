@@ -14,7 +14,8 @@ export class MotoInfoComponent implements OnInit {
   public moto: any;
   public modelSimilaire: any;
   public dataLoaded:Boolean;
-  private baseLink:string="http://apimotos.westeurope.azurecontainer.io";
+  private baseLink:string = "http://localhost:8080"
+  //private baseLink:string="http://apimotos.westeurope.azurecontainer.io";
 
   constructor(private route: ActivatedRoute, private http: HttpClient) { 
     route.params.subscribe(val => {
